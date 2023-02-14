@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
 
     private DateTime lastDateTime;
     
-    private int[] nextScoreTable = new int[] {10, 10, 10};
+    private int[] nextScoreTable = new int[] {10, 100, 1000};
 
     void Start()
     {
@@ -81,10 +81,25 @@ public class GameManager : MonoBehaviour
             UnityEngine.Random.Range(-300.0f, 300.0f),
             UnityEngine.Random.Range(-140.0f, -500.0f),
             0f);
+        
+        int kind = UnityEngine.Random.Range(0, templeLevel + 1);
+        switch(kind){
+            case 0:
+                orb.GetComponent<OrbManager>().SetKind(OrbManager.ORB_KIND.BLUE);
+                break;
+            case 1:
+                orb.GetComponent<OrbManager>().SetKind(OrbManager.ORB_KIND.GREEN);
+                break;
+            case 2:
+                orb.GetComponent<OrbManager>().SetKind(OrbManager.ORB_KIND.PURPLE);
+                break;
+        }
     }
     
-    public void GetOrb(){
-        score += 1;
+    public void GetOrb(int getScore){
+        if(score < nextScore){
+            score += getScore;
+        }
         
         if(score > nextScore){
             score = nextScore;
