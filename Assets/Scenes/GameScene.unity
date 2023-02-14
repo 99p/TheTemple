@@ -153,7 +153,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orbPrefab: {fileID: 2736534947608460940, guid: a0c7b51ddcfc54c629c13013f0e3704d, type: 3}
+  smokePrefab: {fileID: 7992970642125789455, guid: 50f2b59ee98e64466b1d05b4ce4b76d7, type: 3}
+  kusudamaPrefab: {fileID: 5149165333706989948, guid: d6368cef729cc460c991fba3448d43db, type: 3}
   canvasGame: {fileID: 528023232}
+  textScore: {fileID: 1531247750}
+  imageTemple: {fileID: 970040521}
 --- !u!4 &151931510
 Transform:
   m_ObjectHideFlags: 0
@@ -167,7 +171,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &166301369
 GameObject:
@@ -327,7 +331,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &528023232
 GameObject:
@@ -426,7 +430,7 @@ RectTransform:
   - {fileID: 1158533155}
   - {fileID: 1472159423}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -596,7 +600,7 @@ RectTransform:
   - {fileID: 778292608}
   - {fileID: 1531247751}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -690,6 +694,7 @@ GameObject:
   - component: {fileID: 970040522}
   - component: {fileID: 970040524}
   - component: {fileID: 970040523}
+  - component: {fileID: 970040525}
   m_Layer: 5
   m_Name: ImageTemple
   m_TagString: Untagged
@@ -755,6 +760,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 970040521}
   m_CullTransparentMesh: 1
+--- !u!114 &970040525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 970040521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae61401f2e6224bcd890133fdfbc3f96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  templePicture:
+  - {fileID: 21300000, guid: 73d78539d0cd2407db57a88aa3d2174f, type: 3}
+  - {fileID: 21300000, guid: ef880d7a66a6e4379bb6d18d00dbbd36, type: 3}
+  - {fileID: 21300000, guid: 9131e107b1aa541cdb76aa1525cf1a5f, type: 3}
 --- !u!1 &1158533154
 GameObject:
   m_ObjectHideFlags: 0
