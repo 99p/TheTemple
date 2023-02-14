@@ -19,6 +19,10 @@ public class GameManager : MonoBehaviour
     public GameObject textScore;
     public GameObject imageTemple;
     
+    public AudioClip getScoreSE;
+    public AudioClip levelUpSE;
+    public AudioClip clearSE;
+    
     private int score = 0;
     // private int nextScore = 100;
     private int nextScore = 10;
@@ -31,8 +35,12 @@ public class GameManager : MonoBehaviour
     
     private int[] nextScoreTable = new int[] {10, 100, 1000};
 
+    private AudioSource audioSource;
+
     void Start()
     {
+        audioSource = this.gameObject.GetComponent<AudioSource>();
+
         currentOrb = 10;
 
         for(int i = 0; i < MAX_ORB; i++) {
@@ -97,6 +105,8 @@ public class GameManager : MonoBehaviour
     }
     
     public void GetOrb(int getScore){
+        audioSource.PlayOneShot(getScoreSE);
+
         if(score < nextScore){
             score += getScore;
         }
@@ -140,11 +150,15 @@ public class GameManager : MonoBehaviour
         smoke.transform.SetParent(canvasGame.transform, false);
         smoke.transform.SetSiblingIndex(2);
 
+        audioSource.PlayOneShot(levelUpSE);
+
         Destroy(smoke, 0.5f);
     }
 
     void ClearEffect(){
         GameObject kusudama = (GameObject)Instantiate(kusudamaPrefab);
         kusudama.transform.SetParent(canvasGame.transform, false);
+
+        audioSource.PlayOneShot(clearSE);
     }
 }
