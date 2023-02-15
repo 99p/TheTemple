@@ -159,6 +159,7 @@ MonoBehaviour:
   canvasGame: {fileID: 528023232}
   textScore: {fileID: 1531247750}
   imageTemple: {fileID: 970040521}
+  imageMokugyo: {fileID: 1158533154}
   getScoreSE: {fileID: 8300000, guid: d7b4377ef8ae845ba905702e1e3ad72e, type: 3}
   levelUpSE: {fileID: 8300000, guid: b1e4daae30f7a4b09a4f327e8ece3cdd, type: 3}
   clearSE: {fileID: 8300000, guid: 536925e3cd5744578a4f6a9e77d9c3be, type: 3}
@@ -170,7 +171,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 151931508}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.03549649, y: -0.091596246, z: 60.74543}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -887,6 +888,7 @@ GameObject:
   - component: {fileID: 1158533155}
   - component: {fileID: 1158533157}
   - component: {fileID: 1158533156}
+  - component: {fileID: 1158533158}
   m_Layer: 5
   m_Name: ImageMokugyo
   m_TagString: Untagged
@@ -952,6 +954,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1158533154}
   m_CullTransparentMesh: 1
+--- !u!95 &1158533158
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1158533154}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 473a6dfb84f014421a276c7035811ce1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &1472159422
 GameObject:
   m_ObjectHideFlags: 0
