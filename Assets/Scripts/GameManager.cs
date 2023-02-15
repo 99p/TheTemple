@@ -49,14 +49,14 @@ public class GameManager : MonoBehaviour
 
         LoadGameData();
 
-        for(int i = 0; i < MAX_ORB; i++) {
+        for(int i = 0; i < currentOrb; i++) {
             CreateOrb();
         }
-        
+
         LoadGameTime();
+
         
         // 初期設定
-        lastDateTime = DateTime.UtcNow;
         nextScore = nextScoreTable[templeLevel];
         imageTemple.GetComponent<TempleManager>().SetTemplePicture(templeLevel);
         imageTemple.GetComponent<TempleManager>().SetTempleScale(score, nextScore);
