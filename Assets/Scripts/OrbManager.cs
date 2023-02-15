@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class OrbManager : MonoBehaviour
 {
@@ -34,6 +35,28 @@ public class OrbManager : MonoBehaviour
             return;
         }
         
+        RectTransform rect = GetComponent<RectTransform>();
+        
+        // orbの軌跡
+        Vector3[] path = {
+            new Vector3(rect.localPosition.x * 1.5f, 300f, 0f), //中間点
+            new Vector3(0f, 150f, 0f), //終点
+        };
+        
+        // DOTweenによる移動
+        rect.DOLocalPath(path, 0.5f, PathType.CatmullRom)
+            .SetEase(Ease.OutQuad)
+            .OnComplete(AddOrbPoint);
+        
+        // DOTweenによるサイズ変更
+        rect.DOScale(
+            new Vector3(0.5f, 0.5f, 0f),
+            0.5f
+        );
+        
+    }
+    
+    void AddOrbPoint(){
         switch(orbKind){
             case ORB_KIND.BLUE:
                 gameManager.GetComponent<GameManager>().GetOrb(1);
